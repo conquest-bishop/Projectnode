@@ -1,0 +1,74 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Parking form
+  link(rel='stylesheet' href='libs/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='newparking.css')
+nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
+  .container-fluid
+    a.navbar-brand(href='newhome.html') Dockville
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+        li.nav-item.dropdown
+          a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+            | Pages
+          ul.dropdown-menu(aria-labelledby='navbarDropdown')
+            li
+              a.dropdown-item(href='newcarclinic.html') Car Clinic form
+            li
+              a.dropdown-item(href='sign-up-details.html') Client Registration
+            li
+              a.dropdown-item(href='#') coming soon
+      form.d-flex(onsubmit='return Disablefield()')
+        input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+        button.btn.btn-outline-success(type='submit') Search
+.container-cards
+.row
+  .col-sm-6
+    .card
+      .card-body
+        h1.card-title.card-title-parking Parking form
+  .col-sm-6
+    .card.gy-5
+      .card-body
+        form#formID(name='register' action='#' onsubmit='return Validate()' method='POST')
+          label.form-label(for='exampleInputDayParking') Day Parking
+          label.visually-hidden(for='inlineFormSelectPref') Preferences
+          select#inlineFormSelectPref.form-select(name='dayparkingoption')
+            option(selected='')
+            option(value='1') Personal Car(3000)
+            option(value='2') Taxi(3000)
+            option(value='3') Coaster(4000)
+            option(value='3') Truck(3000(
+            option(value='4') Boda Boda(2000)
+          span#dayError
+          // <br>
+          label.form-label(for='exampleInputNightParking') Night Parking
+          label.visually-hidden(for='inlineFormSelectPref') Preferences
+          select#inlineFormSelectPref.form-select(name='nightparkingoption')
+            option(selected='')
+            option(value='1') Personal Car(2000)
+            option(value='2') Taxi(2000)
+            option(value='3') Coaster(2000)
+            option(value='3') Truck(5000(
+            option(value='4') Boda Boda(2000)
+          span#nightError
+          label.form-label(for='exampleInputLesssthan3') less than 3hr
+          label.visually-hidden(for='inlineFormSelectPref') Preferences
+          select#inlineFormSelectPref.form-select(name='lessthan3')
+            option(selected='')
+            option(value='1') Personal Car(2000)
+            option(value='2') Taxi(2000)
+            option(value='3') Coaster(3000)
+            option(value='3') Truck(2000)
+            option(value='4') Boda Boda(1000)
+          span#lessthanError
+          br
+          .butt
+            button.btn(type='submit') Submit
+script(src='./js/parkingValidation.js')
+script(src='libs/bootstrap/js/bootstrap.bundle.js')

@@ -1,0 +1,100 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Register Dockville
+  link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/sign-updetails.css')
+nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
+  .container-fluid
+    a.navbar-brand(href='#') Dockville
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    //
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Services
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" href="#">Parking</a></li>
+      <li><a class="dropdown-item" href="#">Car Clinic</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">coming soon</a></li>
+      </ul>
+      </li>
+      </ul>
+      <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      </div>
+// start of registration form
+.box
+  .register
+    form#formId(name='register' action='#' onsubmit='return Validate(event)' method='POST')
+      h2 Client Form
+      .mb-3
+        .row
+          .col
+            label.form-label(for='exampleInputFirstName') First name
+            input.form-control(type='text' name='firstname' placeholder='First name' aria-label='First name')
+            span#fnameError
+          .col
+            label.form-label(for='exampleInputLastName') Last name
+            input.form-control(type='text' name='lastname' placeholder='Last name' aria-label='Last name')
+            span#lnameError
+        label.form-label(for='exampleInputEmail1') Email address
+        input#exampleInputEmail1.form-control(type='email' name='emailinput' aria-describedby='emailHelp' placeholder='email')
+        span#emailError
+        label.form-label(for='exampleInputPhoneNumber') Phone Number
+        input.form-control(type='text' name='phoneinput' placeholder='Phone Number' aria-label='Phone Number')
+        span#phoneError
+        label.form-label(for='exampleInputNIN') National ID Number
+        input.form-control(type='text' name='niniput' placeholder='NIN' aria-label='NIN')
+        span#ninError
+      .mb-3
+        .row
+          .col-12
+            label.form-label(for='exampleInputNumberPlate') Car Type
+            label.visually-hidden(for='inlineFormSelectPref') Preferences
+            select#inlineFormSelectPref.form-select(name='carType')
+              option(selected='') Choose...
+              option(value='1') Personal Car(not above 5 seater)
+              option(value='2') Taxi(14 seater and below)
+              option(value='3') Coaster(16 seater and above)
+              option(value='3') Truck
+              option(value='4') Boda Boda
+            span#carError
+            label.form-label(for='exampleInputModel') Model
+            input.form-control(type='text' name='modelinput' placeholder='Model' aria-label='Model')
+            span#modelError
+            // <br>
+            label.form-label(for='exampleInputNumberPlate') Color
+            label.visually-hidden(for='inlineFormSelectPref') Preferences
+            select#inlineFormSelectPref.form-select(name='colorinput')
+              option(selected='') Choose...
+              option(value='1') White
+              option(value='2') Black
+              option(value='3') Silver
+              option(value='3') Other
+            span#colorError
+          .col
+            label.form-label(for='exampleInputNumberPlate') Number Plate
+            input.form-control(type='text' name='numberplate' placeholder='Number Plate' aria-label='Number Plate')
+            span#numberplateError
+            br
+            .row
+              .col
+                label(for='date') Arrival Date
+                input.datetime(type='date' name='date')
+              .col
+                label(for='time') Arrival time
+                input.datetime(type='time' name='time')
+        br
+        .butt
+          button.btn(type='submit') Submit
+script(src='./js/regValidation2.js')
+script(src='/libs/bootstrap/js/bootstrap.bundle.js')

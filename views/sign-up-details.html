@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Dockville</title>
+    <link rel="stylesheet" href="/public/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/sign-updetails.css">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dockville</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Parking</a></li>
+              <li><a class="dropdown-item" href="#">Car Clinic</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">coming soon</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div> -->
+    </div>
+  </nav>
+  <!-- start of registration form  -->
+<div class="box">
+  <div class="register">
+    <form id="formId" name="register" action="#" onsubmit="return Validate(event)" method="POST">
+      <h2>Client Form</h2>
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label for="exampleInputFirstName" class="form-label">First name</label>
+              <input type="text" class="form-control" name="firstname" placeholder="First name" aria-label="First name">
+              <span id = "fnameError"></span>
+            </div>
+            <div class="col">
+              <label for="exampleInputLastName" class="form-label">Last name</label>
+              <input type="text" class="form-control" name="lastname" placeholder="Last name" aria-label="Last name">
+            <span id = "lnameError"></span>
+            </div>
+          </div>
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="emailinput" aria-describedby="emailHelp" placeholder="email">
+          <span id = "emailError"></span>
+          <label for="exampleInputPhoneNumber" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" name="phoneinput" placeholder="Phone Number" aria-label="Phone Number">
+          <span id = "phoneError"></span>
+          <label for="exampleInputNIN" class="form-label">National ID Number</label>
+          <input type="text" name="niniput" class="form-control" placeholder="NIN" aria-label="NIN">
+          <span id = "ninError"></span>
+        </div>
+        <div class="mb-3">
+          <div class="row">
+          
+              <div class="col-12">
+                <label for="exampleInputNumberPlate" class="form-label">Car Type</label>
+                <label class="visually-hidden" for="inlineFormSelectPref">Preferences</label>
+                <select class="form-select" name="carType" id="inlineFormSelectPref">
+                  <option selected>Choose...</option>
+                  <option value="1">Personal Car(not above 5 seater)</option>
+                  <option value="2">Taxi(14 seater and below)</option>
+                  <option value="3">Coaster(16 seater and above)</option>
+                  <option value="3">Truck</option>
+                  <option value="4">Boda Boda</option>
+                </select>
+                <span id = "carError"></span>
+                <label for="exampleInputModel" class="form-label">Model</label>
+                <input type="text" name="modelinput" class="form-control" placeholder="Model" aria-label="Model">
+                <span id = "modelError"></span>
+                <!-- <br> -->
+                <label for="exampleInputNumberPlate" class="form-label">Color</label>
+                <label class="visually-hidden" for="inlineFormSelectPref">Preferences</label>
+                <select name="colorinput" class="form-select" id="inlineFormSelectPref">
+                  <option selected>Choose...</option>
+                  <option value="1">White</option>
+                  <option value="2">Black</option>
+                  <option value="3">Silver</option>
+                  <option value="3">Other</option>
+                </select>
+                <span id = "colorError"></span>
+              </div>
+            
+            <div class="col">
+              <label for="exampleInputNumberPlate" class="form-label">Number Plate</label>
+              <input type="text" name="numberplate" class="form-control" placeholder="Number Plate" aria-label="Number Plate">
+              <span id = "numberplateError"></span>
+              <br>
+              <div class="row">
+                <div class="col">
+                  <label for="date" >Arrival Date</label>
+                  <input type="date" class="datetime" name="date">
+                </div>
+                <div class="col">
+                  <label for="time" >Arrival time</label>
+                  <input type="time" class="datetime" name="time">
+                </div>
+              </div>
+            </div>
+         
+        </div>
+        <br>
+        <div class="butt">
+          <button type="submit" class="btn">Submit</button>
+          </div>
+      </form>
+    </div>
+</div>
+<script src="./js/regValidation2.js"></script>
+<script src="/public/libs/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>
