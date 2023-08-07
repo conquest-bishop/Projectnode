@@ -59,7 +59,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
     .col-sm-6
       .card
         .card-body.form-card
-          form#formId(name='register' action='/api/regpark' onsubmit='return Validate(event)' method='POST')
+          form#formId(name='register' method='POST' action="/api/parking/edit?id="+parking._id)
             // <h2 >Client Form</h2>
             .mb-3
               .row
@@ -141,6 +141,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               br
               .butt
                 button.btn(type='submit') Submit
-script(src='./js/regValidation2.js')
+//- script(src='./js/regValidation2.js')
 script(src='/libs/bootstrap/js/bootstrap.bundle.js')
 

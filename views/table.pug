@@ -27,24 +27,24 @@ table.table(style='margin-left: 0%; margin-right:200px; margin-top:60px;')
   if clients.length
     each client in clients
       tr
-      td #{client.firstname}
-      td #{client.lastname}
-      td #{client.emailinput}
-      td #{client.phoneinput}
-      td #{client.niniput}
-      td #{client.carType}
-      td #{client.modelinput}
-      td #{client.colorinput}
-      td #{client.numberplate}
-      td #{client.date}
-      td #{client.time}
-      td
-        form(action="/api/client/delete" method="POST")
-          input(type="hidden", name="id", value=client._id)
-          button.btn.btn-danger(type="submit") Delete
-      td  
-        a.btn.btn-primary(href="/api/client/edit/"+client._id) Edit
-        //- a(href=`/api/employee/edit/${employee._id}`) 
+        td #{client.firstname}
+        td #{client.lastname}
+        td #{client.emailinput}
+        td #{client.phoneinput}
+        td #{client.niniput}
+        td #{client.carType}
+        td #{client.modelinput}
+        td #{client.colorinput}
+        td #{client.numberplate}
+        td #{client.date}
+        td #{client.time}
+        td
+          form(action="/api/client/delete" method="POST")
+            input(type="hidden", name="id", value=client._id)
+            button.btn.btn-danger(type="submit") Delete
+        td  
+          a.btn.btn-primary(href="/api/client/edit/"+client._id) Edit
+          //- a(href=`/api/employee/edit/${employee._id}`) 
 
   else
     p there are no clients in the database

@@ -74,6 +74,9 @@ h1{
     padding-left: 100px;
 }
 
+h4, h5{
+    font-family: font5;
+}
 
 .btn{
     border-radius: 20px;
