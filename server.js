@@ -19,6 +19,12 @@ const loginRoute = require('./controllers/loginRoute')
 const detailsRoute = require('./controllers/detailsRoutes')
 const clinicRoute = require('./controllers/clinicRoute')
 const parkingRoute = require('./controllers/parkingRoute')
+const homeRoute = require('./controllers/homeRoute')
+const mainRoute = require('./controllers/mainRoute')
+const signupRoute = require('./controllers/signupRoute')
+
+
+
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -27,10 +33,16 @@ app.use(express.json());
 connectDB()
 
 // api for routes 
-app.use('/', loginRoute)
+app.use('/api', loginRoute)
 app.use('/api', detailsRoute)
 app.use('/api', clinicRoute)
 app.use('/api', parkingRoute)
+app.use('/api', mainRoute)
+app.use('/api', homeRoute)
+app.use('/api', signupRoute)
+
+
+
 
 
 // routes 

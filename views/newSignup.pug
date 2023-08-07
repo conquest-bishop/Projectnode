@@ -4,8 +4,8 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Sign Up
-  link(rel='stylesheet' href='libs/bootstrap/css/bootstrap.css')
-  link(rel='stylesheet' href='/Registration-Dockville/newRegistration.css')
+  link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/newSignup.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
     a.navbar-brand(href='#') Dockville
@@ -40,19 +40,19 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
     .card.card1.gy-5
       .card-body
         form#formId(name='register' action='#')
-      label.form-label(for='exampleInputEmail1')  Set Username
-      input#userName.form-control(type='text' name='username' aria-describedby='emailHelp')
-      span#emailError
-      label.form-label(for='exampleInputEmail1') Set Email address
-      input#exampleInputEmail1.form-control(type='email' name='emailinput' aria-describedby='emailHelp')
-      span#emailError
-      label.form-label(for='Password') Set Password
-      input.form-control(type='password' name='password' aria-label='Phone Number')
-      span#phoneError
-      br
-      .butt
-        button.btn(type='submit') submit
+          label.form-label(for='exampleInputEmail1')  Set Username
+          input#userName.form-control(type='text' name='username' aria-describedby='emailHelp')
+          span#emailError
+          label.form-label(for='exampleInputEmail1') Set Email address
+          input#exampleInputEmail1.form-control(type='email' name='emailinput' aria-describedby='emailHelp')
+          span#emailError
+          label.form-label(for='Password') Set Password
+          input.form-control(type='password' name='password' aria-label='Phone Number')
+          span#phoneError
+          br
+          .butt
+            button.btn(type='submit') Submit
     // <div class="butt">
     // </div>
 script(src='./js/parkingValidation.js')
-script(src='libs/bootstrap/js/bootstrap.bundle.js')
+script(src='/libs/bootstrap/js/bootstrap.bundle.js')

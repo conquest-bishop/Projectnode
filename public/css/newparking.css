@@ -1,18 +1,27 @@
 body{
-    background-color: rgb(22, 22, 22);
+    background-color: rgb(255, 255, 255);
     padding: 0px;
+    color: #011120;
 }
-
 
 @font-face {
     font-family: font3;
-    src: url(./futura\ medium\ bt.ttf);
+    src: url(/fonts/futura\ medium\ bt.ttf);
 }
 
 
 @font-face {
     font-family: font4;
-    src: url(./Futura\ Heavy\ font.ttf);
+    src: url(/fonts/Futura\ Heavy\ font.ttf);
+}
+
+@font-face {
+    font-family: font5;
+    src: url(/fonts/Louis\ George\ Cafe\ Bold.ttf);
+}
+
+form{
+    font-family: font5;
 }
 
 .nav-link{
@@ -29,21 +38,36 @@ h1{
     font-size: 70px;
 }
 
-.row{
-    padding: 20px ;
-    margin-top: 70px;
-    /* margin-bottom: 200px; */
+.container-cards{
+    padding: 20px;
 
 }
 
 .card{
-    height: 400px;
-    background-color: rgb(15, 15, 15);
-    color: beige;
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
-    text-align: center;
-    border-radius: 60px;
-} 
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(67, 66, 66, 0.5);
+    background-color: rgb(227, 250, 255);
+    border-color: rgb(227, 250, 255);
+}
+
+.parking-card{
+    height: 673px;
+    /* background-color: #001104; */
+    background-color: #a6ffc5;
+    border-color:  #a6ffc5;
+    
+}
+
+h1{
+    padding-top: 260px;
+    padding-left:70px;
+    color:#011120;  
+}
+
+.clinic{
+    padding-left:100px;
+}
 
 
 .btn{
@@ -60,11 +84,4 @@ h1{
    
 }
 
-.card-body form{
-    padding: 50px;
-}
-
-.card-title-parking{
-    padding-top: 120px;
-}
 

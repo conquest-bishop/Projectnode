@@ -3,20 +3,25 @@ body{
     padding: 0px;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(./sky.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(23, 17, 17, 0.7)),url(/images/sky.jpg);
     background-position: center;
     background-size: cover;
 }
 
 @font-face {
     font-family: font3;
-    src: url(./futura\ medium\ bt.ttf);
+    src: url(/fonts/futura\ medium\ bt.ttf);
 }
 
 
 @font-face {
     font-family: font4;
-    src: url(./Futura\ Heavy\ font.ttf);
+    src: url(/fonts/Futura\ Heavy\ font.ttf);
+}
+
+@font-face {
+    font-family: font5;
+    src: url(/fonts/Louis\ George\ Cafe\ Bold.ttf);
 }
 
 .container1{

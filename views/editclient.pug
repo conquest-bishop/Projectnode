@@ -34,33 +34,33 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
 // start of registration form
 .box
   .register
-    form#formId(name='register' action='/api/regClient' onsubmit='return Validate(event)' method='POST')
+    form#formId(name='clientForm' onsubmit='return Validate(event)' method='POST' action="/api/client/edit?id="+client._id)
       h2 Client Form
       .mb-3
         .row
           .col
             label.form-label(for='exampleInputFirstName') First name
-            input.form-control(type='text' name='firstname' placeholder='First name' aria-label='First name')
+            input.form-control(type='text' name='firstname' value=client.firstname placeholder='First name' aria-label='First name')
             span#fnameError
           .col
             label.form-label(for='exampleInputLastName') Last name
-            input.form-control(type='text' name='lastname' placeholder='Last name' aria-label='Last name')
+            input.form-control(type='text' name='lastname' value=client.lastname placeholder='Last name' aria-label='Last name')
             span#lnameError
         label.form-label(for='exampleInputEmail1') Email address
-        input#exampleInputEmail1.form-control(type='email' name='emailinput' aria-describedby='emailHelp' placeholder='email')
+        input#exampleInputEmail1.form-control(type='email' name='emailinput' value=client.emailinput aria-describedby='emailHelp' placeholder='email')
         span#emailError
         label.form-label(for='exampleInputPhoneNumber') Phone Number
-        input.form-control(type='text' name='phoneinput' placeholder='Phone Number' aria-label='Phone Number')
+        input.form-control(type='text' name='phoneinput' value=client.phoneinput placeholder='Phone Number' aria-label='Phone Number')
         span#phoneError
         label.form-label(for='exampleInputNIN') National ID Number
-        input.form-control(type='text' name='niniput' placeholder='NIN' aria-label='NIN')
+        input.form-control(type='text' name='niniput' value=client.niniput placeholder='NIN' aria-label='NIN')
         span#ninError
       .mb-3
         .row
           .col-12
             label.form-label(for='exampleInputNumberPlate') Car Type
             label.visually-hidden(for='inlineFormSelectPref') Preferences
-            select#inlineFormSelectPref.form-select(name='carType')
+            select#inlineFormSelectPref.form-select(name='carType' value=client.carType)
               option(selected='') Choose...
               option(value='1') Personal Car(not above 5 seater)
               option(value='2') Taxi(14 seater and below)
@@ -69,12 +69,12 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               option(value='4') Boda Boda
             span#carError
             label.form-label(for='exampleInputModel') Model
-            input.form-control(type='text' name='modelinput' placeholder='Model' aria-label='Model')
+            input.form-control(type='text' name='modelinput' value=client.modelinput placeholder='Model' aria-label='Model')
             span#modelError
             // <br>
             label.form-label(for='exampleInputNumberPlate') Color
             label.visually-hidden(for='inlineFormSelectPref') Preferences
-            select#inlineFormSelectPref.form-select(name='colorinput')
+            select#inlineFormSelectPref.form-select(name='colorinput' value=client.colorinput)
               option(selected='') Choose...
               option(value='1') White
               option(value='2') Black
@@ -83,16 +83,16 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
             span#colorError
           .col
             label.form-label(for='exampleInputNumberPlate') Number Plate
-            input.form-control(type='text' name='numberplate' placeholder='Number Plate' aria-label='Number Plate')
+            input.form-control(type='text' name='numberplate' value=client.numberplate placeholder='Number Plate' aria-label='Number Plate')
             span#numberplateError
             br
             .row
               .col
                 label(for='date') Arrival Date
-                input.datetime(type='date' name='date')
+                input.datetime(type='date' name='date' value=client.date)
               .col
                 label(for='time') Arrival time
-                input.datetime(type='time' name='time')
+                input.datetime(type='time' name='time' value=client.time)
         br
         .butt
           button.btn(type='submit') Submit

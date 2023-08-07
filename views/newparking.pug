@@ -4,8 +4,8 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Parking form
-  link(rel='stylesheet' href='libs/bootstrap/css/bootstrap.css')
-  link(rel='stylesheet' href='newparking.css')
+  link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/newparking.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
     a.navbar-brand(href='newhome.html') Dockville
@@ -23,52 +23,119 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               a.dropdown-item(href='sign-up-details.html') Client Registration
             li
               a.dropdown-item(href='#') coming soon
-      form.d-flex(onsubmit='return Disablefield()')
+      form.d-flex(onsubmit='')
         input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
         button.btn.btn-outline-success(type='submit') Search
 .container-cards
-.row
-  .col-sm-6
-    .card
-      .card-body
-        h1.card-title.card-title-parking Parking form
-  .col-sm-6
-    .card.gy-5
-      .card-body
-        form#formID(name='register' action='#' onsubmit='return Validate()' method='POST')
-          label.form-label(for='exampleInputDayParking') Day Parking
-          label.visually-hidden(for='inlineFormSelectPref') Preferences
-          select#inlineFormSelectPref.form-select(name='dayparkingoption')
-            option(selected='')
-            option(value='1') Personal Car(3000)
-            option(value='2') Taxi(3000)
-            option(value='3') Coaster(4000)
-            option(value='3') Truck(3000(
-            option(value='4') Boda Boda(2000)
-          span#dayError
-          // <br>
-          label.form-label(for='exampleInputNightParking') Night Parking
-          label.visually-hidden(for='inlineFormSelectPref') Preferences
-          select#inlineFormSelectPref.form-select(name='nightparkingoption')
-            option(selected='')
-            option(value='1') Personal Car(2000)
-            option(value='2') Taxi(2000)
-            option(value='3') Coaster(2000)
-            option(value='3') Truck(5000(
-            option(value='4') Boda Boda(2000)
-          span#nightError
-          label.form-label(for='exampleInputLesssthan3') less than 3hr
-          label.visually-hidden(for='inlineFormSelectPref') Preferences
-          select#inlineFormSelectPref.form-select(name='lessthan3')
-            option(selected='')
-            option(value='1') Personal Car(2000)
-            option(value='2') Taxi(2000)
-            option(value='3') Coaster(3000)
-            option(value='3') Truck(2000)
-            option(value='4') Boda Boda(1000)
-          span#lessthanError
-          br
-          .butt
-            button.btn(type='submit') Submit
-script(src='./js/parkingValidation.js')
-script(src='libs/bootstrap/js/bootstrap.bundle.js')
+  .row
+    .col-sm-6
+      .card.parking-card.gy-5
+        .card-body.parking-body
+          h1 Parking Form
+    .col-sm-6
+      .card
+        .card-body.form-card
+          form#formId(name='register' action='#' onsubmit='return Validate(event)' method='POST')
+            // <h2 >Client Form</h2>
+            .mb-3
+              .row
+                .col
+                  label.form-label(for='exampleInputFirstName') First name
+                  input.form-control(type='text' name='firstname' placeholder='First name' aria-label='First name')
+                  span#fnameError
+                .col
+                  label.form-label(for='exampleInputLastName') Last name
+                  input.form-control(type='text' name='lastname' placeholder='Last name' aria-label='Last name')
+                  span#lnameError
+              .row
+                .col
+                  label.form-label(for='exampleInputEmail1') Email address
+                  input#exampleInputEmail1.form-control(type='email' name='emailinput' aria-describedby='emailHelp' placeholder='email')
+                  span#emailError
+                .col
+                  label.form-label(for='exampleInputPhoneNumber') Phone Number
+                  input.form-control(type='text' name='phoneinput' placeholder='Phone Number' aria-label='Phone Number')
+                  span#phoneError
+              .row
+                .col
+                  label.form-label(for='exampleInputNIN') National ID Number
+                  input.form-control(type='text' name='niniput' placeholder='NIN' aria-label='NIN')
+                  span#ninError
+                .col
+                  label.form-label(for='exampleInputNumberPlate') Car Type
+                  label.visually-hidden(for='inlineFormSelectPref') Preferences
+                  select#inlineFormSelectPref.form-select(name='carType')
+                    option(selected='') Choose...
+                    option(value='1') Personal Car(not above 5 seater)
+                    option(value='2') Taxi(14 seater and below)
+                    option(value='3') Coaster(16 seater and above)
+                    option(value='3') Truck
+                    option(value='4') Boda Boda
+                  span#carError
+              .row
+                .col
+                  label.form-label(for='exampleInputModel') Model
+                  input.form-control(type='text' name='modelinput' placeholder='Model' aria-label='Model')
+                  span#modelError
+                .col
+                  label.form-label(for='exampleInputNumberPlate') Color
+                  label.visually-hidden(for='inlineFormSelectPref') Preferences
+                  select#inlineFormSelectPref.form-select(name='colorinput')
+                    option(selected='') Choose...
+                    option(value='1') White
+                    option(value='2') Black
+                    option(value='3') Silver
+                    option(value='3') Other
+                  span#colorError
+              label.form-label(for='exampleInputNumberPlate') Number Plate
+              input.form-control(type='text' name='numberplate' placeholder='Number Plate' aria-label='Number Plate')
+              span#numberplateError
+              .row
+                .col
+                  label.form-label(for='exampleInputDayParking') Day Parking
+                  label.visually-hidden(for='inlineFormSelectPref') Preferences
+                  select#inlineFormSelectPref.form-select(name='dayparkingoption')
+                    option(selected='')
+                    option(value='1') Personal Car(3000)
+                    option(value='2') Taxi(3000)
+                    option(value='3') Coaster(4000)
+                    option(value='3') Truck(3000(
+                    option(value='4') Boda Boda(2000)
+                  span#dayError
+                .col
+                  label.form-label(for='exampleInputNightParking') Night Parking
+                  label.visually-hidden(for='inlineFormSelectPref') Preferences
+                  select#inlineFormSelectPref.form-select(name='nightparkingoption')
+                    option(selected='')
+                    option(value='1') Personal Car(2000)
+                    option(value='2') Taxi(2000)
+                    option(value='3') Coaster(2000)
+                    option(value='3') Truck(5000)
+                    option(value='4') Boda Boda(2000)
+                  span#nightError
+              label.form-label(for='exampleInputLesssthan3') less than 3hr
+              label.visually-hidden(for='inlineFormSelectPref') Preferences
+              select#inlineFormSelectPref.form-select(name='lessthan3')
+                option(selected='')
+                option(value='1') Personal Car(2000)
+                option(value='2') Taxi(2000)
+                option(value='3') Coaster(3000)
+                option(value='3') Truck(2000)
+                option(value='4') Boda Boda(1000)
+              span#lessthanError
+              br
+              .row
+                .col
+                  label(for='date') Arrival Date
+                  input.datetime(type='date' name='date')
+                  span#dateError
+                .col
+                  label(for='time') Arrival time
+                  input.datetime(type='time' name='time')
+                  span#timeError
+              br
+              .butt
+                button.btn(type='submit') Submit
+script(src='./js/regValidation2.js')
+script(src='/libs/bootstrap/js/bootstrap.bundle.js')
+

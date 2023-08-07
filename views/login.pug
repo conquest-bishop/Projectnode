@@ -4,8 +4,8 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Log In
-  link(rel='stylesheet' href='../public/libs/bootstrap/css/bootstrap.css')
-  link(rel='stylesheet' href='../public/css/login.css')
+  link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/login.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
     a.navbar-brand(href='#') Dockville
@@ -47,9 +47,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
             input.form-control(type='password' name='password' aria-label='Phone Number')
             span#phoneError
             br
-      .butt
-            button.btn(type='submit') login
+            .butt
+                  button.btn(type='submit') login
     // <div class="butt">
     // </div>
 //- script(src='./js/parkingValidation.js')
-script(src='../public/libs/bootstrap/js/bootstrap.bundle.js')
+script(src='/libs/bootstrap/js/bootstrap.bundle.js')
