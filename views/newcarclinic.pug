@@ -32,6 +32,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
       .card.parking-card.gy-5
         .card-body.parking-body
           h1.clinic Clinic Form
+          hr
+          h4.clin Car Tyre
+          h5.clin Tyre Pressure(500)
+          h5.clin Puncture fixing(5000)
+          h5.clin Valves(5000)
     .col-sm-6
       .card
         .card-body.form-card
@@ -90,31 +95,27 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               label.form-label(for='exampleInputNumberPlate') Number Plate
               input.form-control(type='text' name='numberplate' placeholder='Number Plate' aria-label='Number Plate')
               span#numberplateError
-              label.form-label(for='exampleInputDayParking') Car tyre Clinic
+              label.form-label(for='exampleInputDayParking') Service
               label.visually-hidden(for='inlineFormSelectPref') Preferences
               select#inlineFormSelectPref.form-select
                 option(selected='') Choose...
-                option(value='1') Tyre Pressure(500)
-                option(value='2') Puncture fixing(5000)
-                option(value='3') Valves(5000)
+                option(value='1') Car Tyre Clinic 
+                option(value='2') Rent a Battery 
               span#tyreError
-              label.form-label(for='exampleInputNightParking') Rent a Battery
-              label.visually-hidden(for='inlineFormSelectPref') Preferences
-              select#inlineFormSelectPref.form-select
-                option(selected='') For...
-                option(value='1') Personal Car
-                option(value='2') Taxi
-                option(value='3') Coaster
-                option(value='3') Truck
-                option(value='4') Boda Boda
+              label.form-label(for='exampleInputNightParking') Tyre Clinic Cost 
+              input.form-control(type='text' name='cost' placeholder='Cost' aria-label='Number Plate')
+
               span#nightError
               br
               .row
                 .col
-                  label(for='date') Arrival Date
+                  label(for='date') ArrivalDate
                   input.datetime(type='date' name='date')
                 .col
-                  label(for='time') Arrival time
+                  label(for='time') ArrivalTime
+                  input.datetime(type='time' name='time')
+                .col
+                  label(for='time') DepartTime
                   input.datetime(type='time' name='time')
               br
               .butt

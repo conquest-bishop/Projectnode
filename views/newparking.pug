@@ -32,6 +32,30 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
       .card.parking-card.gy-5
         .card-body.parking-body
           h1 Parking Form
+          hr
+          .row 
+            .col
+              h4 Day
+              h5 Personal Car(3000)
+              h5 Taxi(3000)
+              h5 Coaster(4000)
+              h5 Truck(3000)
+              h5 Boda Boda(2000)
+            .col 
+              h4 Night
+              h5 Personal Car(2000)
+              h5 Taxi(2000)
+              h5 Coaster(2000)
+              h5 Truck(5000)
+              h5 Boda Boda(2000)
+            .col  
+              h4 Less than 3
+              h5 Personal Car(2000)
+              h5 Taxi(2000)
+              h5 Coaster(3000)
+              h5 Truck(2000)
+              h5 Boda Boda(1000)
+
     .col-sm-6
       .card
         .card-body.form-card
@@ -90,47 +114,28 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               label.form-label(for='exampleInputNumberPlate') Number Plate
               input.form-control(type='text' name='numberplate' placeholder='Number Plate' aria-label='Number Plate')
               span#numberplateError
-              .row
-                .col
-                  label.form-label(for='exampleInputDayParking') Day Parking
-                  label.visually-hidden(for='inlineFormSelectPref') Preferences
-                  select#inlineFormSelectPref.form-select(name='dayparkingoption')
-                    option(selected='')
-                    option(value='1') Personal Car(3000)
-                    option(value='2') Taxi(3000)
-                    option(value='3') Coaster(4000)
-                    option(value='3') Truck(3000(
-                    option(value='4') Boda Boda(2000)
-                  span#dayError
-                .col
-                  label.form-label(for='exampleInputNightParking') Night Parking
-                  label.visually-hidden(for='inlineFormSelectPref') Preferences
-                  select#inlineFormSelectPref.form-select(name='nightparkingoption')
-                    option(selected='')
-                    option(value='1') Personal Car(2000)
-                    option(value='2') Taxi(2000)
-                    option(value='3') Coaster(2000)
-                    option(value='3') Truck(5000)
-                    option(value='4') Boda Boda(2000)
-                  span#nightError
-              label.form-label(for='exampleInputLesssthan3') less than 3hr
+              label.form-label(for='exampleInputLesssthan3') Service
               label.visually-hidden(for='inlineFormSelectPref') Preferences
               select#inlineFormSelectPref.form-select(name='lessthan3')
                 option(selected='')
-                option(value='1') Personal Car(2000)
-                option(value='2') Taxi(2000)
-                option(value='3') Coaster(3000)
-                option(value='3') Truck(2000)
-                option(value='4') Boda Boda(1000)
+                option(value='1') Day Parking
+                option(value='2') Night Parking 
+                option(value='3') Less than 3hours
               span#lessthanError
+              label.form-label(for='exampleInputNumberPlate') Cost
+              input.form-control(type='text' name='cost' placeholder='cost' aria-label='cost')
               br
               .row
                 .col
-                  label(for='date') Arrival Date
+                  label(for='date') ArrivalDate
                   input.datetime(type='date' name='date')
                   span#dateError
                 .col
-                  label(for='time') Arrival time
+                  label(for='time') ArrivalTime
+                  input.datetime(type='time' name='time')
+                  span#timeError
+                .col
+                  label(for='time') DepartTime
                   input.datetime(type='time' name='time')
                   span#timeError
               br

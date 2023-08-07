@@ -60,13 +60,18 @@ h1{
 }
 
 h1{
-    padding-top: 260px;
+    padding-top: 160px;
     padding-left:70px;
     color:#011120;  
 }
 
 .clinic{
     padding-left:100px;
+}
+
+.clin{
+    /* text-align: center; */
+    padding-left: 100px;
 }
 
 
