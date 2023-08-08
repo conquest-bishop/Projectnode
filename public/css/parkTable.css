@@ -1,6 +1,23 @@
 body{
     background-color: rgb(255, 255, 255);
     padding: 0px;
+    font-family: font5;
+}
+
+@font-face {
+    font-family: font3;
+    src: url(/fonts/futura\ medium\ bt.ttf);
+}
+
+
+@font-face {
+    font-family: font4;
+    src: url(/fonts/Futura\ Heavy\ font.ttf);
+}
+
+@font-face {
+    font-family: font5;
+    src: url(/fonts/Louis\ George\ Cafe\ Bold.ttf);
 }
 
 .col-sm-6{

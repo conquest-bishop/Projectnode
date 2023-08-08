@@ -42,11 +42,11 @@ h1.heading Parking Dashbord
         a.btn.btn-primary(href='#') Go somewhere
 .card
   .card-body
-    table.table
+    table.table 
       thead
         tr
-            th(scope='col') FirstName
-            th(scope='col') LastName
+            th(scope='col') First
+            th(scope='col') Last
             th(scope='col') Email
             th(scope='col') Phone
             th(scope='col') NIN
@@ -59,8 +59,8 @@ h1.heading Parking Dashbord
             th(scope='col') Date
             th(scope='col') Arrival 
             th(scope='col') Depart
-            th(scope='col') Delete
-            th(scope='col') Edit 
+            th(scope='col') Edit
+            th(scope='col') Delete 
       tbody
       if parkings.length
         each parking in parkings
@@ -79,6 +79,9 @@ h1.heading Parking Dashbord
                 td #{parking.date}
                 td #{parking.time}
                 td #{parking.depart}
+                td  
+                    a.btn.btn-primary(href="/api/parking/edit/"+parking._id) Edit
+                    //- a(href=`/api/employee/edit/${employee._id}`)
                 td
                     form(action="/api/parking/delete" method="POST")
                         input(type="hidden", name="id", value=parking._id)
