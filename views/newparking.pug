@@ -90,11 +90,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                   label.visually-hidden(for='inlineFormSelectPref') Preferences
                   select#inlineFormSelectPref.form-select(name='carType')
                     option(selected='') Choose...
-                    option(value='1') Personal Car(not above 5 seater)
-                    option(value='2') Taxi(14 seater and below)
-                    option(value='3') Coaster(16 seater and above)
-                    option(value='3') Truck
-                    option(value='4') Boda Boda
+                    option(value='Personal') Personal Car(not above 5 seater)
+                    option(value='Taxi') Taxi(14 seater and below)
+                    option(value='Coaster') Coaster(16 seater and above)
+                    option(value='Truck') Truck
+                    option(value='Boda') BodaBoda
                   span#carError
               .row
                 .col
@@ -103,13 +103,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                   span#modelError
                 .col
                   label.form-label(for='exampleInputNumberPlate') Color
-                  label.visually-hidden(for='inlineFormSelectPref') Preferences
-                  select#inlineFormSelectPref.form-select(name='colorinput')
-                    option(selected='') Choose...
-                    option(value='1') White
-                    option(value='2') Black
-                    option(value='3') Silver
-                    option(value='3') Other
+                  input.form-control(type='text' name='colorinput' placeholder='Color' aria-label='Model')
+                  span#colorError
                   span#colorError
               label.form-label(for='exampleInputNumberPlate') Number Plate
               input.form-control(type='text' name='numberplate' placeholder='Number Plate' aria-label='Number Plate')
@@ -118,9 +113,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               label.visually-hidden(for='inlineFormSelectPref') Preferences
               select#inlineFormSelectPref.form-select(name='services')
                 option(selected='')
-                option(value='1') Day Parking
-                option(value='2') Night Parking 
-                option(value='3') Less than 3hours
+                option(value='Day') Day Parking
+                option(value='Night') Night Parking 
+                option(value='<3hours') Less than 3hours
               span#lessthanError
               label.form-label(for='exampleInputNumberPlate') Cost
               input.form-control(type='text' name='cost' placeholder='cost' aria-label='cost')
@@ -141,6 +136,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               br
               .butt
                 button.btn(type='submit') Submit
-script(src='./js/regValidation2.js')
+script(src='/js/regValidation2.js')
 script(src='/libs/bootstrap/js/bootstrap.bundle.js')
 

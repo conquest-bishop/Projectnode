@@ -31,64 +31,45 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
     .col-sm-6
       .card.parking-card.gy-5
         .card-body.parking-body
-          h1 Parking Form
+          h1.clinic Clinic Form
           hr
-          .row 
-            .col
-              h4 Day
-              h5 Personal Car(3000)
-              h5 Taxi(3000)
-              h5 Coaster(4000)
-              h5 Truck(3000)
-              h5 Boda Boda(2000)
-            .col 
-              h4 Night
-              h5 Personal Car(2000)
-              h5 Taxi(2000)
-              h5 Coaster(2000)
-              h5 Truck(5000)
-              h5 Boda Boda(2000)
-            .col  
-              h4 Less than 3
-              h5 Personal Car(2000)
-              h5 Taxi(2000)
-              h5 Coaster(3000)
-              h5 Truck(2000)
-              h5 Boda Boda(1000)
-
+          h4.clin Car Tyre
+          h5.clin Tyre Pressure(500)
+          h5.clin Puncture fixing(5000)
+          h5.clin Valves(5000)
     .col-sm-6
       .card
         .card-body.form-card
-          form#formId(name='register' method='POST' action="/api/parking/edit?id="+parking._id)
+          form#formId(name='register' method='POST' action="/api/clinic/edit?id="+client._id)
             // <h2 >Client Form</h2>
             .mb-3
               .row
                 .col
                   label.form-label(for='exampleInputFirstName') First name
-                  input.form-control(type='text' name='firstname' value= parking.firstname placeholder='First name' aria-label='First name')
+                  input.form-control(type='text' name='firstname' value= client.firstname placeholder='First name' aria-label='First name')
                   span#fnameError
                 .col
                   label.form-label(for='exampleInputLastName') Last name
-                  input.form-control(type='text' name='lastname' value= parking.lastname placeholder='Last name' aria-label='Last name')
+                  input.form-control(type='text' name='lastname' value= client.lastname placeholder='Last name' aria-label='Last name')
                   span#lnameError
               .row
                 .col
                   label.form-label(for='exampleInputEmail1') Email address
-                  input#exampleInputEmail1.form-control(type='email' name='emailinput' value= parking.emailinput aria-describedby='emailHelp' placeholder='email')
+                  input#exampleInputEmail1.form-control(type='email' name='emailinput' value= client.emailinput aria-describedby='emailHelp' placeholder='email')
                   span#emailError
                 .col
                   label.form-label(for='exampleInputPhoneNumber') Phone Number
-                  input.form-control(type='text' name='phoneinput' value= parking.phoneinput placeholder='Phone Number' aria-label='Phone Number')
+                  input.form-control(type='text' name='phoneinput' value= client.phoneinput placeholder='Phone Number' aria-label='Phone Number')
                   span#phoneError
               .row
                 .col
                   label.form-label(for='exampleInputNIN') National ID Number
-                  input.form-control(type='text' name='niniput' value= parking.niniput placeholder='NIN' aria-label='NIN')
+                  input.form-control(type='text' name='niniput' value= client.niniput placeholder='NIN' aria-label='NIN')
                   span#ninError
                 .col
                   label.form-label(for='exampleInputNumberPlate') Car Type
                   label.visually-hidden(for='inlineFormSelectPref') Preferences
-                  select#inlineFormSelectPref.form-select(name='carType' value= parking.carType)
+                  select#inlineFormSelectPref.form-select(name='carType' value= client.carType)
                     option(selected='') Choose...
                     option(value='Personal') Personal Car(not above 5 seater)
                     option(value='Taxi') Taxi(14 seater and below)
@@ -99,25 +80,25 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               .row
                 .col
                   label.form-label(for='exampleInputModel') Model
-                  input.form-control(type='text' name='modelinput' value= parking.modelinput placeholder='Model' aria-label='Model')
+                  input.form-control(type='text' name='modelinput' value= client.modelinput placeholder='Model' aria-label='Model')
                   span#modelError
                 .col
                   label.form-label(for='exampleInputNumberPlate') Color
-                  input.form-control(type='text' name='colorinput' value= parking.modelinput placeholder='Model' aria-label='Model')
+                  input.form-control(type='text' name='colorinput' value= client.colorinput placeholder='Model' aria-label='Model')
                   span#colorError
               label.form-label(for='exampleInputNumberPlate') Number Plate
-              input.form-control(type='text' name='numberplate' value= parking.numberplate placeholder='Number Plate' aria-label='Number Plate')
+              input.form-control(type='text' name='numberplate' value= client.numberplate placeholder='Number Plate' aria-label='Number Plate')
               span#numberplateError
               label.form-label(for='exampleInputLesssthan3') Services
               label.visually-hidden(for='inlineFormSelectPref') Preferences
-              select#inlineFormSelectPref.form-select(name='services' value= parking.services)
+              select#inlineFormSelectPref.form-select(name='services' value= client.services)
                 option(selected='')
-                option(value='Day') Day Parking
-                option(value='Night') Night Parking 
+                option(value='Day') Day 
+                option(value='Night') Night 
                 option(value='<3hours') Less than 3hours
               span#lessthanError
               label.form-label(for='exampleInputNumberPlate') Cost
-              input.form-control(type='text' name='cost' value= parking.cost placeholder='cost' aria-label='cost')
+              input.form-control(type='text' name='cost' value= client.cost placeholder='cost' aria-label='cost')
               br
               .row
                 .col
