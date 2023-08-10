@@ -15,7 +15,12 @@ const Validate=(event)=>{
     let lessThan = document.register.lessthan3
     let Date = document.register.date
     let Time = document.register.time
+    let Fullname = document.register.fullname
+    let Username = document.register.username
+    let Role = document.register.role
+    let Branch = document.register.branch
 
+    
     // picking error fields
     let errorFirstName = document.getElementById("fnameError")
     let errorLastName = document.getElementById("lnameError")
@@ -31,7 +36,11 @@ const Validate=(event)=>{
     let errorLess = document.getElementById("lessthanError")
     let errorDate = document.getElementById("dateError")
     let errorTime = document.getElementById("timeError")
-
+    
+    let errorFullname = document.getElementById("fullnError")
+    let errorUser = document.getElementById("userError")
+    let errorRole = document.getElementById("roleError")
+    let errorBranch = document.getElementById("branchError")
 
     // validating first name input
     // validating for emptyness
@@ -194,10 +203,63 @@ const Validate=(event)=>{
     }else{
         number.style.border = "1px solid green";
     }
-
     
+    
+    // validating number plate input
+    if(Fullname.value == ""){
+        Fullname.style.border = "1px solid red";
+        errorFullname.textContent = "number plate is required";
+        errorFullname.style = "color: red; font-size: 11px; font-family: arial, sans-serif;";
+        number.focus();
+        error++;
+    }else{
+        Fullname.style.border = "1px solid green";
+    }
 
+    // validating number plate input
+    if(Username.value == ""){
+        Username.style.border = "1px solid red";
+        errorUser.textContent = "number plate is required";
+        errorUser.style = "color: red; font-size: 11px; font-family: arial, sans-serif;";
+        number.focus();
+        error++;
+    }else{
+        Username.style.border = "1px solid green";
+    }
 
+    // validating number plate input
+        if(Username.value == ""){
+            Username.style.border = "1px solid red";
+            errorUser.textContent = "number plate is required";
+            errorUser.style = "color: red; font-size: 11px; font-family: arial, sans-serif;";
+            number.focus();
+            error++;
+        }else{
+            Username.style.border = "1px solid green";
+        }
+
+    // validating number plate input
+        if(Role.value == ""){
+            Role.style.border = "1px solid red";
+            errorRole.textContent = "number plate is required";
+            errorRole.style = "color: red; font-size: 11px; font-family: arial, sans-serif;";
+            number.focus();
+            error++;
+        }else{
+            Role.style.border = "1px solid green";
+        }
+    
+        
+        // validating number plate input
+        if(Branch.value == ""){
+            Branch.style.border = "1px solid red";
+            errorBranch.textContent = "number plate is required";
+            errorBranch.style = "color: red; font-size: 11px; font-family: arial, sans-serif;";
+            number.focus();
+            error++;
+        }else{
+            Branch.style.border = "1px solid green";
+        }
    
     if(error > 0){
         event.preventDefault();

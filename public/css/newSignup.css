@@ -51,8 +51,8 @@ h1{
 }
 
 .card{
-    margin-top: 100px;
-    height: 370px;
+    margin-top: 0px;
+    height: 500px;
     border-radius: 30px;
     padding: 10px;
     box-shadow: 0 5px 15px rgba(67, 66, 66, 0.5);
@@ -81,7 +81,7 @@ h1{
 
 .card-body{
     padding: 50px;
-    padding-top: 50px;
+    padding-top: 10px;
     
 }
 

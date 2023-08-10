@@ -40,19 +40,37 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
     .card.card1.gy-5
       .card-body
         form#formId(name='register' action='#')
-          label.form-label(for='exampleInputEmail1')  Set Username
-          input#userName.form-control(type='text' name='username' aria-describedby='emailHelp')
+          label.form-label(for='exampleInputEmail1')  Full name
+          input#userName.form-control(type='text' name='fullname')
+          span#fullnError
+          label.form-label(for='exampleInputEmail1')  Username
+          input#userName.form-control(type='text' name='username')
+          span#userError
+          label.form-label(for='exampleInputEmail1') Email 
+          input#exampleInputEmail1.form-control(type='email' name='emailinput')
           span#emailError
-          label.form-label(for='exampleInputEmail1') Set Email address
-          input#exampleInputEmail1.form-control(type='email' name='emailinput' aria-describedby='emailHelp')
-          span#emailError
-          label.form-label(for='Password') Set Password
-          input.form-control(type='password' name='password' aria-label='Phone Number')
-          span#phoneError
+          .row
+              .col
+                label.form-label(for='role') Role 
+                select#inlineFormSelectPref.form-select(name= 'role')
+                    option(value='') Select Role
+                    option(value='Director') Director 
+                    option(value='Manager') Manager
+                    option(value='Agent') Agent
+                    span#roleError
+              .col
+                label.form-label(for='branch') Branch 
+                select#inlineFormSelectPref.form-select(name= 'branch')
+                    option(value='') Select branch
+                    option(value='Kampala Rd') Kampala Rd 
+                    option(value='Nakawa') Nakawa
+                    span#branchError
+          label.form-label(for='password') Password
+          input#email.form-control(type='password' name='password')
           br
           .butt
             button.btn(type='submit') Submit
     // <div class="butt">
     // </div>
-script(src='./js/parkingValidation.js')
+script(src='/js/regValidation2.js')
 script(src='/libs/bootstrap/js/bootstrap.bundle.js')
