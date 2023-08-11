@@ -36,6 +36,20 @@ body{
     text-align: center;
 }
 
+.counter{
+    font-size: 60px;
+}
+
+.count-card{
+    width: 150px;
+    height: 140px
+
+}
+
+.count-text{
+    text-align: center;
+}
+
 /* .table{
     border-radius: 20px;
     background-color: rgb(227, 250, 255);

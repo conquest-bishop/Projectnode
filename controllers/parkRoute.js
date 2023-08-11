@@ -16,20 +16,23 @@ router.post('/regpark', async (req, res) => {
         res.redirect('/api/parkform');
     }
     catch(error){
-        res.status(404).render('parking');
+        res.status(404).render('newparking');
         console.log(error)}
 });
 
     // reading from table
     router.get('/parktable', async(req, res) =>{
         try{
+            // Count the number of documents in the Park collection
+            let count = await Park.countDocuments(); 
             let items = await Park.find();
             // aggregate makes a sum of the desired numbers in the list
             // let ages = await Employee.aggregate([
             //     {'$group': {_id: '$all', totalAge: {$sum: '$age'}}}
             // ])
+            console.log('Total documents in Park collection:', count);
             console.log(items)
-            res.render('parkingtable.pug', {parkings: items});
+            res.render('parkingtable.pug', {parkings: items, count});
         }
         catch(error){
             console.log(error)

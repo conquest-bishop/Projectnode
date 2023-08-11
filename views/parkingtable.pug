@@ -26,14 +26,13 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
       form.d-flex(onsubmit='')
         input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
         button.btn.btn-outline-success(type='submit') Search
-h1.heading Parking Dashbord
+h1.heading Parking Table
 .row
   .col-sm-6
-    .card
-      .card-body
-        h5.card-title Special title treatment
-        p.card-text With supporting text below as a natural lead-in to additional content.
-        a.btn.btn-primary(href='#') Go somewhere
+    .card.count-card
+      .card-body.count-text
+        h5.card-title Parkings
+        p.counter #{count}
   .col-sm-6
     .card
       .card-body

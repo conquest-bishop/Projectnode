@@ -25,13 +25,15 @@ router.post('/regclinic', async (req, res) => {
 // reading from table
 router.get('/clinictable', async(req, res) =>{
     try{
+        let count = await Clinic.countDocuments(); 
         let items = await Clinic.find();
         // aggregate makes a sum of the desired numbers in the list
         // let ages = await Employee.aggregate([
         //     {'$group': {_id: '$all', totalAge: {$sum: '$age'}}}
         // ])
+        console.log('Total documents in Park collection:', count);
         console.log(items)
-        res.render('clinictable.pug', {clients: items});
+        res.render('clinictable.pug', {clients: items, count});
     }
     catch(error){
         console.log(error)

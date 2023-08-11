@@ -1,4 +1,6 @@
 const mongoose = require("mongoose")
+const passportLocalMongoose = require("passport-local-mongoose")
+
 
 const SignupSchema = new mongoose.Schema({
     fullname:{
@@ -15,7 +17,7 @@ const SignupSchema = new mongoose.Schema({
         unique: true 
     },
     role:{
-        type: Number
+        type: String
     },
     branch:{
         type: String 
@@ -25,4 +27,6 @@ const SignupSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Signup', SignupSchema)
+SignupSchema.plugin(passportLocalMongoose,{usernameField: 'emailinput'})
+
+module.exports = mongoose.model('Register', SignupSchema)

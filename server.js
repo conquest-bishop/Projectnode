@@ -1,16 +1,36 @@
 const express = require('express');
 const path = require("path");
 const dotenv = require("dotenv").config()
+// importing passport
+const passport = require('passport')
+// importing database setup 
 const connectDB = require("./config/dbconfig")
 const port = process.env.PORT || 3000;
 const app = express();
+// importing register model 
+const Register = require('./models/signupModel')
 
+// importing session
+const expressSession = require('express-session')({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false
+})
 
 app.engine("pug", require("pug").__express);
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"))
 // routes for styles files
 app.use(express.static(path.join(__dirname, "public")))
+
+app.use(expressSession);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(Register.createStrategy());
+passport.serializeUser(Register.serializeUser());
+passport.deserializeUser(Register.deserializeUser());
 
 
 

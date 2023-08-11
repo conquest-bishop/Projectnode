@@ -39,7 +39,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .col-sm-6
     .card.card1.gy-5
       .card-body
-        form#formId(name='register' action='#')
+        form#formId(name='reguser' action='/api/reguser' method='POST')
           label.form-label(for='exampleInputEmail1')  Full name
           input#userName.form-control(type='text' name='fullname')
           span#fullnError
@@ -52,7 +52,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
           .row
               .col
                 label.form-label(for='role') Role 
-                select#inlineFormSelectPref.form-select(name= 'role')
+                select#inlineFormSelectPref.form-select(name= 'role' )
                     option(value='') Select Role
                     option(value='Director') Director 
                     option(value='Manager') Manager
