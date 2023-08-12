@@ -3,7 +3,7 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Parking form
+  title CarClinic form
   link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
   link(rel='stylesheet' href='/css/newparking.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
@@ -18,9 +18,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
             | Pages
           ul.dropdown-menu(aria-labelledby='navbarDropdown')
             li
-              a.dropdown-item(href='/api/mngclinicform') Car Clinic form
+              a.dropdown-item(href='/api/mngparkform') Parking form
             li
-              a.dropdown-item(href='/api/mngparktable') Parking Table
+              a.dropdown-item(href='/api/mngclinictable') Clinic table
             li
               a.dropdown-item(href='/api/logout') Logout
       form.d-flex(onsubmit='')
@@ -31,35 +31,16 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
     .col-sm-6
       .card.parking-card.gy-5
         .card-body.parking-body
-          h1 Parking Form
+          h1.clinic Clinic Form
           hr
-          .row 
-            .col
-              h4 Day
-              h5 Personal Car(3000)
-              h5 Taxi(3000)
-              h5 Coaster(4000)
-              h5 Truck(3000)
-              h5 Boda Boda(2000)
-            .col 
-              h4 Night
-              h5 Personal Car(2000)
-              h5 Taxi(2000)
-              h5 Coaster(2000)
-              h5 Truck(5000)
-              h5 Boda Boda(2000)
-            .col  
-              h4 Less than 3
-              h5 Personal Car(2000)
-              h5 Taxi(2000)
-              h5 Coaster(3000)
-              h5 Truck(2000)
-              h5 Boda Boda(1000)
-
+          h4.clin Car Tyre
+          h5.clin Tyre Pressure(500)
+          h5.clin Puncture fixing(5000)
+          h5.clin Valves(5000)
     .col-sm-6
       .card
         .card-body.form-card
-          form#formId(name='register' action='/api/regpark' onsubmit='return Validate(event)' method='POST')
+          form#formId(name='register' action='/api/regclinic' onsubmit='return Validate(event)' method='POST')
             // <h2 >Client Form</h2>
             .mb-3
               .row
@@ -94,7 +75,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                     option(value='Taxi') Taxi(14 seater and below)
                     option(value='Coaster') Coaster(16 seater and above)
                     option(value='Truck') Truck
-                    option(value='Boda') BodaBoda
+                    option(value='Boda') Boda Boda
                   span#carError
               .row
                 .col
@@ -105,34 +86,31 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                   label.form-label(for='exampleInputNumberPlate') Color
                   input.form-control(type='text' name='colorinput' placeholder='Color' aria-label='Model')
                   span#colorError
-                  span#colorError
               label.form-label(for='exampleInputNumberPlate') Number Plate
               input.form-control(type='text' name='numberplate' placeholder='Number Plate' aria-label='Number Plate')
               span#numberplateError
-              label.form-label(for='exampleInputLesssthan3') Services
+              label.form-label(for='exampleInputDayParking') Services
               label.visually-hidden(for='inlineFormSelectPref') Preferences
-              select#inlineFormSelectPref.form-select(name='services')
-                option(selected='')
-                option(value='Day') Day Parking
-                option(value='Night') Night Parking 
-                option(value='<3hours') Less than 3hours
-              span#lessthanError
-              label.form-label(for='exampleInputNumberPlate') Cost
-              input.form-control(type='text' name='cost' placeholder='cost' aria-label='cost')
+              select#inlineFormSelectPref.form-select
+                option(selected='') Choose...
+                option(value='TyreSwap') Car Tyre Clinic 
+                option(value='Battery') Rent a Battery 
+              span#tyreError
+              label.form-label(for='exampleInputNightParking') Cost 
+              input.form-control(type='text' name='cost' placeholder='Cost' aria-label='Number Plate')
+
+              span#nightError
               br
               .row
                 .col
                   label(for='date') ArrivalDate
                   input.datetime(type='date' name='date')
-                  span#dateError
                 .col
                   label(for='time') ArrivalTime
                   input.datetime(type='time' name='time')
-                  span#timeError
                 .col
                   label(for='time') DepartTime
                   input.datetime(type='time' name='depart')
-                  span#timeError
               br
               .butt
                 button.btn(type='submit') Submit

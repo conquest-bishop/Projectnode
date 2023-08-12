@@ -3,12 +3,12 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Parking Table 
+  title CarClinic Table 
   link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
   link(rel='stylesheet' href='/css/parkTable.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
-    a.navbar-brand(href='/api/home') Dockville
+    a.navbar-brand(href='/api/managerdash') Dockville
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
@@ -18,18 +18,18 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
             | Pages
           ul.dropdown-menu(aria-labelledby='navbarDropdown')
             li
-              a.dropdown-item(href='/api/parkform') Parking form
+              a.dropdown-item(href='/api/mngclinicform') Car Clinic form
             li
               a.dropdown-item(href='/api/logout') Logout
       form.d-flex(onsubmit='')
         input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
         button.btn.btn-outline-success(type='submit') Search
-h1.heading Parking Table
+h1.heading CarClinic Dashbord
 .row
   .col-sm-6
     .card.count-card
       .card-body.count-text
-        h5.card-title Parkings
+        h5.card-title Clients
         p.counter #{count}
   .col-sm-6
     .card
@@ -57,32 +57,32 @@ h1.heading Parking Table
             th(scope='col') Arrival 
             th(scope='col') Depart
             th(scope='col') Edit
-            //- th(scope='col') Delete 
+            th(scope='col') Delete 
       tbody
-      if parkings.length
-        each parking in parkings
+      if clients.length
+        each client in clients
             tr
-                td #{parking.firstname}
-                td #{parking.lastname}
-                td #{parking.emailinput}
-                td #{parking.phoneinput}
-                td #{parking.niniput}
-                td #{parking.carType}
-                td #{parking.modelinput}
-                td #{parking.colorinput}
-                td #{parking.numberplate}
-                td #{parking.services}
-                td #{parking.cost}
-                td #{parking.date}
-                td #{parking.time}
-                td #{parking.depart}
+                td #{client.firstname}
+                td #{client.lastname}
+                td #{client.emailinput}
+                td #{client.phoneinput}
+                td #{client.niniput}
+                td #{client.carType}
+                td #{client.modelinput}
+                td #{client.colorinput}
+                td #{client.numberplate}
+                td #{client.services}
+                td #{client.cost}
+                td #{client.date}
+                td #{client.time}
+                td #{client.depart}
                 td  
-                    a.btn.tb-btn(href="/api/parking/edit/"+parking._id) Edit
-                    //- a(href=`/api/employee/edit/${employee._id}`)
-                //- td
-                //-     form(action="/api/parking/delete" method="POST")
-                //-         input(type="hidden", name="id", value=parking._id)
-                //-         button.btn.btn-danger(type="submit") Delete
+                    a.btn.tb-btn(href="/api/mngclinic/edit/"+client._id) Edit
+                    //- a(href=`/api/clinic/edit/${clinic._id}`)
+                td
+                    form(action="/api/clinic/delete" method="POST")
+                        input(type="hidden", name="id", value=client._id)
+                        button.btn.btn-danger(type="submit") Delete
                 
       else 
         p there are no parkings in the database

@@ -18,11 +18,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
             | Pages
           ul.dropdown-menu(aria-labelledby='navbarDropdown')
             li
-              a.dropdown-item(href='newparking.html') Parking form
+              a.dropdown-item(href='mngparktable') Parking table
             li
-              a.dropdown-item(href='newcarclinic.html') Car Clinic form
-            li
-              a.dropdown-item(href='sign-up-details.html') Client Registration
+              a.dropdown-item(href='mngclinictable') Car Clinic table
             li
               a.dropdown-item(href='/api/logout') Logout
       form.d-flex
@@ -50,12 +48,12 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
         h1.card-title Parking
         br
         .butt
-          a.btn(href="/api/parkform") Next
+          a.btn(href="/api/mngparkform") Next
   .col-sm-6
     .card.gy-5
       .card-body
         h1.card-title CarClinic
         br
         .butt
-          a.btn(href="/api/clinicform") Next
+          a.btn(href="/api/mngclinicform") Next
 script(src='/libs/bootstrap/js/bootstrap.bundle.js')

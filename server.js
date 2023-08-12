@@ -44,8 +44,8 @@ const mainRoute = require('./controllers/mainRoute')
 const signupRoute = require('./controllers/signupRoute')
 const parkRoute = require('./controllers/parkRoute')
 const dashRoute = require('./controllers/dashRoute');
-
-
+const mngparkRoute = require('./controllers/mngparkRoute');
+const mngclinicRoute = require('./controllers/mngclinicRoute');
 
 
 app.use(express.urlencoded({extended: false}));
@@ -64,8 +64,8 @@ app.use('/api', homeRoute)
 app.use('/api', signupRoute)
 app.use('/api', parkRoute)
 app.use('/api', dashRoute)
-
-
+app.use('/api', mngparkRoute)
+app.use('/api', mngclinicRoute)
 
 
 

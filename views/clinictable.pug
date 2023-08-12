@@ -57,7 +57,7 @@ h1.heading CarClinic Dashbord
             th(scope='col') Arrival 
             th(scope='col') Depart
             th(scope='col') Edit
-            th(scope='col') Delete 
+            //- th(scope='col') Delete 
       tbody
       if clients.length
         each client in clients
@@ -79,10 +79,10 @@ h1.heading CarClinic Dashbord
                 td  
                     a.btn.tb-btn(href="/api/clinic/edit/"+client._id) Edit
                     //- a(href=`/api/clinic/edit/${clinic._id}`)
-                td
-                    form(action="/api/clinic/delete" method="POST")
-                        input(type="hidden", name="id", value=client._id)
-                        button.btn.btn-danger(type="submit") Delete
+                //- td
+                //-     form(action="/api/clinic/delete" method="POST")
+                //-         input(type="hidden", name="id", value=client._id)
+                //-         button.btn.btn-danger(type="submit") Delete
                 
       else 
         p there are no parkings in the database
