@@ -39,7 +39,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .col-sm-6
     .card.card1.gy-5
       .card-body
-        form#formId(name='register' action='#')
+        form#formId(name='register'  method='POST', action="/api/login")
             label.form-label(for='exampleInputEmail1') Email
             input#exampleInputEmail1.form-control(type='email' name='emailinput' aria-describedby='emailHelp')
             span#emailError

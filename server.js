@@ -43,6 +43,7 @@ const homeRoute = require('./controllers/homeRoute')
 const mainRoute = require('./controllers/mainRoute')
 const signupRoute = require('./controllers/signupRoute')
 const parkRoute = require('./controllers/parkRoute')
+const dashRoute = require('./controllers/dashRoute');
 
 
 
@@ -62,7 +63,7 @@ app.use('/api', mainRoute)
 app.use('/api', homeRoute)
 app.use('/api', signupRoute)
 app.use('/api', parkRoute)
-
+app.use('/api', dashRoute)
 
 
 
