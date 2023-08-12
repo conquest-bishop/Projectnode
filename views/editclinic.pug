@@ -8,24 +8,24 @@ head
   link(rel='stylesheet' href='/css/newparking.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
-    a.navbar-brand(href='newhome.html') Dockville
+    a.navbar-brand(href='#') Dockville
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
-      ul.navbar-nav.ms-auto.mb-2.mb-lg-0
-        li.nav-item.dropdown
-          a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-            | Pages
-          ul.dropdown-menu(aria-labelledby='navbarDropdown')
-            li
-              a.dropdown-item(href='newcarclinic.html') Car Clinic form
-            li
-              a.dropdown-item(href='sign-up-details.html') Client Registration
-            li
-              a.dropdown-item(href='#') coming soon
-      form.d-flex(onsubmit='')
-        input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
-        button.btn.btn-outline-success(type='submit') Search
+      //- ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+      //-   li.nav-item.dropdown
+      //-     a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+      //-       | Pages
+      //-     ul.dropdown-menu(aria-labelledby='navbarDropdown')
+      //-       li
+      //-         a.dropdown-item(href='newcarclinic.html') Car Clinic form
+      //-       li
+      //-         a.dropdown-item(href='sign-up-details.html') Client Registration
+      //-       li
+      //-         a.dropdown-item(href='#') coming soon
+      //- form.d-flex(onsubmit='')
+      //-   input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+      //-   button.btn.btn-outline-success(type='submit') Search
 .container-cards
   .row
     .col-sm-6
@@ -103,15 +103,15 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               .row
                 .col
                   label(for='date') ArrivalDate
-                  input.datetime(type='date' name='date' value= parking.date)
+                  input.datetime(type='date' name='date' value= client.date)
                   span#dateError
                 .col
                   label(for='time') ArrivalTime
-                  input.datetime(type='time' name='time' value= parking.time)
+                  input.datetime(type='time' name='time' value= client.time)
                   span#timeError
                 .col
                   label(for='time') DepartTime
-                  input.datetime(type='time' name='depart' value= parking.depart)
+                  input.datetime(type='time' name='depart' value= client.depart)
                   span#timeError
               br
               .butt

@@ -58,7 +58,7 @@ router.get('/clinictable', async(req, res) =>{
 router.get('/clinic/edit/:id', async (req, res)=>{
     try{
         const vehicle = await Clinic.findOne({_id: req.params.id});
-        res.render('editclinic', {clinic:vehicle});
+        res.render('editclinic', {client:vehicle});
     }catch(error){
         res.status(400).send('could not find client in database');
         console.log(error)

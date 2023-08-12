@@ -24,7 +24,7 @@ router.post('/login', passport.authenticate('local',
         res.redirect('/api/managerdash')
     }
     else if (req.session.user.role === 'Agent'){
-        res.redirect('/api/salesdash')
+        res.redirect('/api/home')
     }else{
         res.send('user doesnt exist')
     }

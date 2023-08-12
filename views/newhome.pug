@@ -8,7 +8,7 @@ head
   link(rel='stylesheet' href='/css/newhome.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
-    a.navbar-brand(href='#') Dockville
+    a.navbar-brand(href='/api/home') Dockville
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
@@ -18,13 +18,13 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
             | Pages
           ul.dropdown-menu(aria-labelledby='navbarDropdown')
             li
-              a.dropdown-item(href='newparking.html') Parking form
+              a.dropdown-item(href='/api/parktable') Parking table
             li
-              a.dropdown-item(href='newcarclinic.html') Car Clinic form
+              a.dropdown-item(href='/api/clinictable') Car Clinic table
             li
-              a.dropdown-item(href='sign-up-details.html') Client Registration
+              a.dropdown-item(href='https://www.nytimes.com/games/wordle/index.html' target='_blank') Take a break
             li
-              a.dropdown-item(href='#') coming soon
+              a.dropdown-item(href='/api/logout') Logout
       form.d-flex
         input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
         button.btn.btn-outline-success(type='submit') Search

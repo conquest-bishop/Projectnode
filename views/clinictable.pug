@@ -8,7 +8,7 @@ head
   link(rel='stylesheet' href='/css/parkTable.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
-    a.navbar-brand(href='newhome.html') Dockville
+    a.navbar-brand(href='/api/home') Dockville
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
@@ -18,11 +18,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
             | Pages
           ul.dropdown-menu(aria-labelledby='navbarDropdown')
             li
-              a.dropdown-item(href='newcarclinic.html') Car Clinic form
+              a.dropdown-item(href='/api/clinicform') Car Clinic form
             li
-              a.dropdown-item(href='sign-up-details.html') Client Registration
-            li
-              a.dropdown-item(href='#') coming soon
+              a.dropdown-item(href='/api/logout') Logout
       form.d-flex(onsubmit='')
         input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
         button.btn.btn-outline-success(type='submit') Search
@@ -79,7 +77,7 @@ h1.heading CarClinic Dashbord
                 td #{client.time}
                 td #{client.depart}
                 td  
-                    a.btn.btn-primary(href="/api/clinic/edit/"+client._id) Edit
+                    a.btn.tb-btn(href="/api/clinic/edit/"+client._id) Edit
                     //- a(href=`/api/clinic/edit/${clinic._id}`)
                 td
                     form(action="/api/clinic/delete" method="POST")

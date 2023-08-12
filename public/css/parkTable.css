@@ -50,6 +50,34 @@ body{
     text-align: center;
 }
 
+.nav-link{
+    font-family: font4;
+    color: #1DB954;
+}
+
+.navbar-brand{
+    font-family: font4;
+}
+
+.btn{
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 90px;
+    background-color: #1DB954;
+    color: beige;
+    font-family: font4;
+}
+
+.butt{
+    text-align: center;
+   
+}
+
+.tb-btn{
+    width: 60px;
+}
+
+
 /* .table{
     border-radius: 20px;
     background-color: rgb(227, 250, 255);
