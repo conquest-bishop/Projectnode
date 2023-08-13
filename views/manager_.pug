@@ -5,7 +5,7 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Home
   link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/newhome.css')
+  link(rel='stylesheet' href='/css/mngdash.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
     a.navbar-brand(href='/api/managerdash') Dockville
@@ -26,21 +26,17 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
       form.d-flex
         input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
         button.btn.btn-outline-success(type='submit') Search
+
+.heading
+  h1 Services
+.container-cards
 .row
   .col-sm-6
     .card.count-card
       .card-body.count-text
-        h5.card-title Parkings
+        h5.card-title Parking
         p.counter #{count}
-  .col-sm-6
-    .card
-      .card-body
-        h5.card-title Special title treatment
-        p.card-text With supporting text below as a natural lead-in to additional content.
-        a.btn.btn-primary(href='#') Go somewhere
-.heading
-  h1 Services
-.container-cards
+  
 .row
   .col-sm-6
     .card

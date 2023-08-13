@@ -41,6 +41,8 @@ router.post('/regpark', async (req, res) => {
         }
     });
 
+   
+
     // Delete (we are CREATING by deleting)
 router.post('/parking/delete', async (req, res)=>{
     try{

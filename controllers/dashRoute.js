@@ -16,6 +16,8 @@ router.get('/managerdash', ensureLoggedIn('/api/login'), (req, res)=>{
     res.render('manager_.pug')
 })
 
+
+
 router.get('/agentdash', ensureLoggedIn('/api/login'), (req, res)=>{
     res.render('newhome.pug')
 })
