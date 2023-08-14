@@ -47,7 +47,7 @@ const dashRoute = require('./controllers/dashRoute');
 const mngparkRoute = require('./controllers/mngparkRoute');
 const mngclinicRoute = require('./controllers/mngclinicRoute');
 const pricesRoute = require('./controllers/pricesRoute');
-
+const ccpricesRoute = require('./controllers/ccpricesRoute');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -68,7 +68,7 @@ app.use('/api', dashRoute)
 app.use('/api', mngparkRoute)
 app.use('/api', mngclinicRoute)
 app.use('/api', pricesRoute)
-
+app.use('/api', ccpricesRoute)
 
 // routes 
 // app.get('/login', (req, res) => {

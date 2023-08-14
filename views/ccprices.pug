@@ -3,7 +3,7 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Parking Prices 
+  title Clinic Prices 
   link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
   link(rel='stylesheet' href='/css/login.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
@@ -35,19 +35,16 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
 .container-cards
 .row
   .col-sm-6
-    h1.card-title.card-title-parking Parking Prices
+    h1.card-title.card-title-parking Clinic Prices
   .col-sm-6
     .card.card1.gy-5
       .card-body
-        form#formId(name='register'  method='POST', action="/api/regprice")
-            label.form-label(for='exampleInputEmail1') Day Parking
-            input#exampleInputEmail1.form-control(type='text' name='day' )
+        form#formId(name='register'  method='POST', action="/api/regccprice")
+            label.form-label(for='exampleInputEmail1') Car Tyre
+            input#exampleInputEmail1.form-control(type='text' name='tyre' )
             span#emailError
-            label.form-label(for='Password') Night Parking
-            input.form-control(type='text' name='night' )
-            span#phoneError
-            label.form-label(for='text') Less than 3hr
-            input.form-control(type='text' name='less')
+            label.form-label(for='Password') Battery Rent
+            input.form-control(type='text' name='battery' )
             span#phoneError
             br
             .butt

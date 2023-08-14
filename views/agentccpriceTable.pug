@@ -3,36 +3,34 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Parking Prices Table 
+  title Clinic Prices Table 
   link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
   link(rel='stylesheet' href='/css/parkTable.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
-    a.navbar-brand(href='/api/managerdash') Dockville
+    a.navbar-brand(href='/api/home') Dockville
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
       
-h1.heading Parking Prices 
+h1.heading CarClinic Prices 
 .card
   .card-body
     table.table 
       thead
         tr
-            th(scope='col') Day Parking
-            th(scope='col') Night Parking
-            th(scope='col') Less than 3hr
-            th(scope='col') Edit
+            th(scope='col') Car Tyre
+            th(scope='col') Battery Rent
+            //- th(scope='col') Edit
             //- th(scope='col') Delete 
       tbody
-      if prices.length
-        each price in prices
+      if ccprices.length
+        each ccprice in ccprices
             tr
-                td #{price.day}
-                td #{price.night}
-                td #{price.less}
-                td  
-                    a.btn.tb-btn(href="/api/prices/edit/"+price._id) Edit
+                td #{ccprice.tyre}
+                td #{ccprice.battery}
+                //- td  
+                //-     a.btn.tb-btn(href="/api/prices/edit/"+price._id) Edit
                 
                 
       else 
