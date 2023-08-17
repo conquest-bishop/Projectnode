@@ -70,11 +70,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                   label.visually-hidden(for='inlineFormSelectPref') Preferences
                   select#inlineFormSelectPref.form-select(name='carType' value= parking.carType)
                     option(selected='') Choose...
-                    option(value='Personal') Personal Car(not above 5 seater)
-                    option(value='Taxi') Taxi(14 seater and below)
-                    option(value='Coaster') Coaster(16 seater and above)
-                    option(value='Truck') Truck
-                    option(value='Boda') BodaBoda
+                    option(value='Personal' selected=parking.carType==='Personal') Personal Car(not above 5 seater)
+                    option(value='Taxi' selected=parking.carType==='Taxi') Taxi(14 seater and below)
+                    option(value='Coaster' selected=parking.carType==='Coaster') Coaster(16 seater and above)
+                    option(value='Truck' selected=parking.carType==='Truck') Truck
+                    option(value='Boda' selected=parking.carType==='Boda') BodaBoda
                   span#carError
               .row
                 .col
@@ -92,9 +92,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               label.visually-hidden(for='inlineFormSelectPref') Preferences
               select#inlineFormSelectPref.form-select(name='services' value= parking.services)
                 option(selected='')
-                option(value='Day') Day Parking
-                option(value='Night') Night Parking 
-                option(value='<3hours') Less than 3hours
+                option(value='Day' selected=parking.services==='Day') Day Parking
+                option(value='Night' selected=parking.services==='Night') Night Parking 
+                option(value='<3hours' selected=parking.services==='<3hours') Less than 3hours
               span#lessthanError
               label.form-label(for='exampleInputNumberPlate') Cost
               input.form-control(type='text' name='cost' value= parking.cost placeholder='cost' aria-label='cost')

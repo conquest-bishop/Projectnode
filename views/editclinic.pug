@@ -69,11 +69,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                   label.visually-hidden(for='inlineFormSelectPref') Preferences
                   select#inlineFormSelectPref.form-select(name='carType' value= client.carType)
                     option(selected='') Choose...
-                    option(value='Personal') Personal Car(not above 5 seater)
-                    option(value='Taxi') Taxi(14 seater and below)
-                    option(value='Coaster') Coaster(16 seater and above)
-                    option(value='Truck') Truck
-                    option(value='Boda') BodaBoda
+                    option(value='Personal' selected=client.carType==='Personal') Personal Car(not above 5 seater)
+                    option(value='Taxi' selected=client.carType==='Taxi') Taxi(14 seater and below)
+                    option(value='Coaster' selected=client.carType==='Coaster') Coaster(16 seater and above)
+                    option(value='Truck' selected=client.carType==='Truck') Truck
+                    option(value='Boda' selected=client.carType==='Boda') BodaBoda
                   span#carError
               .row
                 .col
@@ -91,9 +91,9 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               label.visually-hidden(for='inlineFormSelectPref') Preferences
               select#inlineFormSelectPref.form-select(name='services' value= client.services)
                 option(selected='')
-                option(value='Day') Day 
-                option(value='Night') Night 
-                option(value='<3hours') Less than 3hours
+                option(value='Day' selected=client.services==='Day') Day 
+                option(value='Night' selected=client.services==='Night') Night 
+                option(value='<3hours' selected=client.services==='<3hours') Less than 3hours
               span#lessthanError
               label.form-label(for='exampleInputNumberPlate') Cost
               input.form-control(type='text' name='cost' value= client.cost placeholder='cost' aria-label='cost')
