@@ -45,30 +45,30 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               .row
                 .col
                   label.form-label(for='exampleInputFirstName') First name
-                  input.form-control(type='text' name='firstname' value= parking.firstname placeholder='First name' aria-label='First name')
+                  input.form-control(disabled type='text' name='firstname' value= parking.firstname placeholder='First name' aria-label='First name')
                   span#fnameError
                 .col
                   label.form-label(for='exampleInputLastName') Last name
-                  input.form-control(type='text' name='lastname' value= parking.lastname placeholder='Last name' aria-label='Last name')
+                  input.form-control(disabled type='text' name='lastname' value= parking.lastname placeholder='Last name' aria-label='Last name')
                   span#lnameError
               .row
                 .col
                   label.form-label(for='exampleInputEmail1') Email address
-                  input#exampleInputEmail1.form-control(type='email' name='emailinput' value= parking.emailinput aria-describedby='emailHelp' placeholder='email')
+                  input#exampleInputEmail1.form-control(disabled type='email' name='emailinput' value= parking.emailinput aria-describedby='emailHelp' placeholder='email')
                   span#emailError
                 .col
                   label.form-label(for='exampleInputPhoneNumber') Phone Number
-                  input.form-control(type='text' name='phoneinput' value= parking.phoneinput placeholder='Phone Number' aria-label='Phone Number')
+                  input.form-control(disabled type='text' name='phoneinput' value= parking.phoneinput placeholder='Phone Number' aria-label='Phone Number')
                   span#phoneError
               .row
                 .col
                   label.form-label(for='exampleInputNIN') National ID Number
-                  input.form-control(type='text' name='niniput' value= parking.niniput placeholder='NIN' aria-label='NIN')
+                  input.form-control(disabled type='text' name='niniput' value= parking.niniput placeholder='NIN' aria-label='NIN')
                   span#ninError
                 .col
                   label.form-label(for='exampleInputNumberPlate') Car Type
                   label.visually-hidden(for='inlineFormSelectPref') Preferences
-                  select#inlineFormSelectPref.form-select(name='carType' value= parking.carType)
+                  select#inlineFormSelectPref.form-select(disabled name='carType' value= parking.carType)
                     option(selected='') Choose...
                     option(value='Personal' selected=parking.carType==='Personal') Personal Car(not above 5 seater)
                     option(value='Taxi' selected=parking.carType==='Taxi') Taxi(14 seater and below)
@@ -79,34 +79,34 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               .row
                 .col
                   label.form-label(for='exampleInputModel') Model
-                  input.form-control(type='text' name='modelinput' value= parking.modelinput placeholder='Model' aria-label='Model')
+                  input.form-control(disabled type='text' name='modelinput' value= parking.modelinput placeholder='Model' aria-label='Model')
                   span#modelError
                 .col
                   label.form-label(for='exampleInputNumberPlate') Color
-                  input.form-control(type='text' name='colorinput' value= parking.modelinput placeholder='Model' aria-label='Model')
+                  input.form-control(disabled type='text' name='colorinput' value= parking.modelinput placeholder='Model' aria-label='Model')
                   span#colorError
               label.form-label(for='exampleInputNumberPlate') Number Plate
-              input.form-control(type='text' name='numberplate' value= parking.numberplate placeholder='Number Plate' aria-label='Number Plate')
+              input.form-control(disabled type='text' name='numberplate' value= parking.numberplate placeholder='Number Plate' aria-label='Number Plate')
               span#numberplateError
               label.form-label(for='exampleInputLesssthan3') Services
               label.visually-hidden(for='inlineFormSelectPref') Preferences
-              select#inlineFormSelectPref.form-select(name='services' value= parking.services)
+              select#inlineFormSelectPref.form-select(disabled name='services' value= parking.services)
                 option(selected='')
                 option(value='Day' selected=parking.services==='Day') Day Parking
                 option(value='Night' selected=parking.services==='Night') Night Parking 
                 option(value='<3hours' selected=parking.services==='<3hours') Less than 3hours
               span#lessthanError
               label.form-label(for='exampleInputNumberPlate') Cost
-              input.form-control(type='text' name='cost' value= parking.cost placeholder='cost' aria-label='cost')
+              input.form-control(disabled type='text' name='cost' value= parking.cost placeholder='cost' aria-label='cost')
               br
               .row
                 .col
                   label(for='date') ArrivalDate
-                  input.datetime(type='date' name='date' value= parking.date)
+                  input.datetime(disabled type='date' name='date' value= parking.date)
                   span#dateError
                 .col
                   label(for='time') ArrivalTime
-                  input.datetime(type='time' name='time' value= parking.time)
+                  input.datetime(disabled type='time' name='time' value= parking.time)
                   span#timeError
                 .col
                   label(for='time') DepartTime
