@@ -68,7 +68,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                   label.form-label(for='exampleInputNumberPlate') Car Type
                   label.visually-hidden(for='inlineFormSelectPref') Preferences
                   select#inlineFormSelectPref.form-select(name='carType')
-                    option(selected='') Choose...
+                    option(selected='') 
                     option(value='Personal') Personal Car(not above 5 seater)
                     option(value='Taxi') Taxi(14 seater and below)
                     option(value='Coaster') Coaster(16 seater and above)
@@ -89,23 +89,24 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               span#numberplateError
               label.form-label(for='exampleInputDayParking') Services
               label.visually-hidden(for='inlineFormSelectPref') Preferences
-              select#inlineFormSelectPref.form-select
-                option(selected='') Choose...
+              select#inlineFormSelectPref.form-select(name='services')
+                option(selected='')
                 option(value='TyreSwap') Car Tyre Clinic 
                 option(value='Battery') Rent a Battery 
-              span#tyreError
+              span#errorservices
               label.form-label(for='exampleInputNightParking') Cost 
-              input.form-control(type='text' name='cost' placeholder='Cost' aria-label='Number Plate')
-
-              span#nightError
+              input.form-control(type='text' name='cost'  aria-label='cost')
+              span#errorcost
               br
               .row
                 .col
                   label(for='date') ArrivalDate
                   input.datetime(type='date' name='date')
+                  span#dateError
                 .col
                   label(for='time') ArrivalTime
                   input.datetime(type='time' name='time')
+                  span#timeError
                 .col
                   label(for='time') DepartTime
                   input.datetime(type='time' name='depart')

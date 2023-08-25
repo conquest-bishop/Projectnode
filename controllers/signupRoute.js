@@ -2,10 +2,11 @@ const express = require('express');
 const Register = require('../models/signupModel')
 const router = express.Router()
 const passport = require('passport')
+const {ensureLoggedIn} = require('connect-ensure-login');
 
 
-// login route
-router.get('/register', (req, res)=>{
+// sign up route
+router.get('/register', ensureLoggedIn('/api/login'), (req, res)=>{
     res.render('newSignup.pug')
 })
 

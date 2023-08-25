@@ -39,7 +39,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .col-sm-6
     .card.card1.gy-5
       .card-body
-        form#formId(name='reguser' action='/api/reguser' method='POST')
+        form#formId(name='reguser' action='/api/reguser' onsubmit='return Validate(event)' method='POST')
           label.form-label(for='exampleInputEmail1')  Full name
           input#userName.form-control(type='text' name='fullname')
           span#fullnError

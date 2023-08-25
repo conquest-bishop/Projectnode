@@ -69,7 +69,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                   label.form-label(for='exampleInputNumberPlate') Car Type
                   label.visually-hidden(for='inlineFormSelectPref') Preferences
                   select#inlineFormSelectPref.form-select(name='carType')
-                    option(selected='') Choose...
+                    option(selected='') 
                     option(value='Personal') Personal Car(not above 5 seater)
                     option(value='Taxi') Taxi(14 seater and below)
                     option(value='Coaster') Coaster(16 seater and above)
@@ -85,7 +85,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                   label.form-label(for='exampleInputNumberPlate') Color
                   input.form-control(type='text' name='colorinput' placeholder='Color' aria-label='Model')
                   span#colorError
-                  span#colorError
               label.form-label(for='exampleInputNumberPlate') Number Plate
               input.form-control(type='text' name='numberplate' placeholder='Number Plate' aria-label='Number Plate')
               span#numberplateError
@@ -96,9 +95,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
                 option(value='Day') Day Parking
                 option(value='Night') Night Parking 
                 option(value='<3hours') Less than 3hours
-              span#lessthanError
+              span#errorservices
               label.form-label(for='exampleInputNumberPlate') Cost
-              input.form-control(type='text' name='cost' placeholder='cost' aria-label='cost')
+              input.form-control(type='text' name='cost'  aria-label='cost')
+              span#errorcost
               br
               .row
                 .col
