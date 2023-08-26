@@ -3,7 +3,7 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Home
+  title Director
   link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
   link(rel='stylesheet' href='/css/newhome.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
@@ -21,8 +21,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
               a.dropdown-item(href='newparking.html') Parking form
             li
               a.dropdown-item(href='newcarclinic.html') Car Clinic form
-            li
-              a.dropdown-item(href='/api/register' target='_blank') User Signup
+            li 
+            
+               a.dropdown-item(href='/api/register' target='_blank') User Signup
+            
+             
             li
               a.dropdown-item(href='/api/logout') Logout
       form.d-flex
@@ -37,9 +40,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .col-sm-6
     .card
       .card-body
-        h5.card-title Special title treatment
-        p.card-text With supporting text below as a natural lead-in to additional content.
-        a.btn.btn-primary(href='#') Go somewhere
+        h5.card-title Clinic
+        p.counter #{count2}
 .heading
   h1 Services
 .container-cards
