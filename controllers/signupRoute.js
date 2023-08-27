@@ -7,7 +7,12 @@ const {ensureLoggedIn} = require('connect-ensure-login');
 
 // sign up route
 router.get('/register', ensureLoggedIn('/api/login'), (req, res)=>{
+    req.session.user = req.user;
+    if(req.session.user.role === 'Director'){ 
     res.render('newSignup.pug')
+    }else{
+        res.render('login.pug', {alert: 'access denied'})
+    }
 })
 
 

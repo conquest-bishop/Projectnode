@@ -18,11 +18,13 @@ router.get('/directordash', ensureLoggedIn('/api/login'), async(req, res)=>{
     console.log('Total documents in Park collection:', count);
     let count2 = await Clinic.countDocuments(); 
     console.log('Total documents in clinic collection:', count2);
-
+    let parkCost = await Park.aggregate([
+        {'$group': {_id: 'null', totalPcost: {$sum: '$cost'}}}])
+    console.log('Total documents in clinic collection:', parkCost);
 
 
     // let loggedInUser = req.session.user.fullname
-    res.render('director_.pug', {count, count2})
+    res.render('director_.pug', {totalPcost: parkCost, count, count2})
 });
 
 // reading from table
