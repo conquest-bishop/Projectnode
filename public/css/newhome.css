@@ -86,6 +86,28 @@ h1{
     color: #011120;
 }
 
+.counter{
+    font-size: 60px;
+    font-family: font4;
+}
+
+.count-card{
+    width: 630px;
+    height: 240px;
+    /* margin-left: 10px; */
+
+}
+
+.count-text{
+    text-align: center;
+    
+}
+
+h5{
+    font-size: 60px;
+}
+
+
 
 
 

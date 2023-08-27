@@ -1,0 +1,46 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Clinic Prices Table 
+  link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/parkTable.css')
+nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
+  .container-fluid
+    a.navbar-brand(href='/api/directordash') Dockville
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      
+h1.heading Clinic Prices 
+.card
+  .card-body
+    table.table 
+      thead
+        tr
+            th(scope='col') Car Tyre
+            th(scope='col') Battery Rent
+            th(scope='col') Edit
+      tbody
+      if ccprices.length
+        each ccprice in ccprices
+            tr
+                td #{ccprice.tyre}
+                td #{ccprice.battery}
+                td  
+                    a.btn.tb-btn(href="/api/ccprices/edit/"+ccprice._id) Edit
+                
+                
+      else 
+        p there are no parkings in the database
+        
+
+
+          
+
+
+
+
+
+script(src='/libs/bootstrap/js/bootstrap.bundle.js')

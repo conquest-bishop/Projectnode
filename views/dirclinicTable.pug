@@ -8,7 +8,7 @@ head
   link(rel='stylesheet' href='/css/parkTable.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
-    a.navbar-brand(href='/api/home') Dockville
+    a.navbar-brand(href='/api/directordash') Dockville
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
@@ -17,8 +17,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
           a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
             | Pages
           ul.dropdown-menu(aria-labelledby='navbarDropdown')
-            li
-              a.dropdown-item(href='/api/clinicform') Car Clinic form
+            //- li
+            //-   a.dropdown-item(href='/api/clinicform') Car Clinic form
             li
               a.dropdown-item(href='/api/logout') Logout
       form.d-flex(onsubmit='')
@@ -31,12 +31,12 @@ h1.heading CarClinic Dashbord
       .card-body.count-text
         h5.card-title Clients
         p.counter #{count}
-  .col-sm-6
-    .card
-      //- .card-body
-      //-   h5.card-title Special title treatment
-      //-   p.card-text With supporting text below as a natural lead-in to additional content.
-      //-   a.btn.btn-primary(href='#') Go somewhere
+//-   .col-sm-6
+//-     .card
+//-       .card-body
+//-         h5.card-title Special title treatment
+//-         p.card-text With supporting text below as a natural lead-in to additional content.
+//-         a.btn.btn-primary(href='#') Go somewhere
 .card
   .card-body
     table.table 
