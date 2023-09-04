@@ -28,10 +28,9 @@ router.post('/reguser', async(req, res)=>{
         res.status(400).send({message: 'failed to register user'})
         console.log(error)
     }
-})
+});
 
 
-// log
 
 
 

@@ -1,0 +1,80 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Employee Table 
+  link(rel='stylesheet' href='/libs/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/parkTable.css')
+nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
+  .container-fluid
+    a.navbar-brand(href='/api/directordash') Dockville
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+        li.nav-item.dropdown
+          a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+            | Pages
+          ul.dropdown-menu(aria-labelledby='navbarDropdown')
+            //- li
+            //-   a.dropdown-item(href='/api/clinicform') Car Clinic form
+            li
+              a.dropdown-item(href='/api/logout') Logout
+      form.d-flex(onsubmit='')
+        input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+        button.btn.btn-outline-success(type='submit') Search
+h1.heading Employee Table
+.row
+  .col-sm-6
+    .card.count-card
+      .card-body.count-text
+        h5.card-title Employees
+        p.counter #{count}
+//-   .col-sm-6
+//-     .card
+//-       .card-body
+//-         h5.card-title Special title treatment
+//-         p.card-text With supporting text below as a natural lead-in to additional content.
+//-         a.btn.btn-primary(href='#') Go somewhere
+.card
+  .card-body
+    table.table 
+      thead
+        tr
+            th(scope='col') Name
+            th(scope='col') username
+            th(scope='col') Email
+            th(scope='col') Role
+            th(scope='col') Branch
+            th(scope='col') Edit
+            th(scope='col') Delete 
+      tbody
+      if emps.length
+        each emp in emps
+            tr
+                td #{emp.fullname}
+                td #{emp.username}
+                td #{emp.emailinput}
+                td #{emp.role}
+                td #{emp.branch}
+                td  
+                    a.btn.tb-btn(href="/api/emp/edit/"+emp._id) Edit
+                    //- a(href=`/api/emp/edit/${emp._id}`)
+                td
+                    form(action="/api/emp/delete" method="POST")
+                        input(type="hidden", name="id", value=emp._id)
+                        button.btn.btn-danger(type="submit") Delete
+                
+      else 
+        p there are no employees in the database
+        
+
+
+          
+
+
+
+
+
+script(src='/libs/bootstrap/js/bootstrap.bundle.js')

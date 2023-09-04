@@ -4,7 +4,7 @@ const Park =  require('../models/parkModel');
 const Clinic =  require('../models/clinicModel');
 const Cprice =  require('../models/ccpricesModel');
 const Price =  require('../models/pricesModel');
-
+const Register =  require('../models/signupModel');
 
 
 
@@ -18,13 +18,17 @@ router.get('/directordash', ensureLoggedIn('/api/login'), async(req, res)=>{
     console.log('Total documents in Park collection:', count);
     let count2 = await Clinic.countDocuments(); 
     console.log('Total documents in clinic collection:', count2);
+    // let costs = await Park.find()
     let parkCost = await Park.aggregate([
-        {'$group': {_id: 'null', totalPcost: {$sum: '$cost'}}}])
+        {'$group': {_id: '$all', totalPcost: {$sum: '$cost'}}}])
     console.log('Total documents in clinic collection:', parkCost);
+    let clinicCost = await Clinic.aggregate([
+        {'$group': {_id: '$all', totalCcost: {$sum: '$cost'}}}])
+    console.log('Total documents in clinic collection:', clinicCost);
 
 
     // let loggedInUser = req.session.user.fullname
-    res.render('director_.pug', {totalPcost: parkCost, count, count2})
+    res.render('director_.pug', {totalsum: parkCost[0].totalPcost, totalCsum: clinicCost[0].totalCcost, count, count2})
 });
 
 // reading from table
@@ -106,6 +110,60 @@ router.get('/dirparkprice', async(req, res) =>{
         console.log(error)
         return  res.status().send({message: 'sorry couldnt get clients'});
           
+    }
+});
+
+
+// reading from table
+router.get('/emptable', async(req, res) =>{
+    try{
+        // Count the number of documents in the Park collection
+        let count = await Register.countDocuments(); 
+        let items = await Register.find();
+        // aggregate makes a sum of the desired numbers in the list
+        // let ages = await Employee.aggregate([
+        //     {'$group': {_id: '$all', totalAge: {$sum: '$age'}}}
+        // ])
+        console.log('Total documents in Register collection:', count);
+        console.log(items)
+        res.render('empTable.pug', {emps: items, count});
+    }
+    catch(error){
+        console.log(error)
+        return  res.status().send({message: 'sorry couldnt get employees'});
+          
+    }
+});
+
+  // Delete (we are CREATING by deleting)
+  router.post('/emp/delete', async (req, res)=>{
+    try{
+        await Register.deleteOne({_id: req.body.id});
+        res.redirect('back');
+    }catch(error){
+        res.status(400).send('unable to delete item from the database')
+    }
+});
+
+    // Update/edit (we are READING and editing)
+router.get('/emp/edit/:id', async (req, res)=>{
+    try{
+        const user = await Register.findOne({_id: req.params.id});
+        res.render('editnewSignup', {emp:user});
+    }catch(error){
+        res.status(400).send('could not find employee in database');
+        console.log(error)
+    }
+});
+
+// update (we are CREATING what we updated in the data base )
+router.post('/emp/edit', async (req, res)=>{
+    try{
+        await Register.findOneAndUpdate({_id: req.query.id}, req.body);
+        res.redirect('/api/emptable');
+    }catch(error){
+        res.status(400).send('could not edit employee data');
+        console.log(error)
     }
 });
 

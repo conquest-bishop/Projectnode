@@ -19,13 +19,20 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
           ul.dropdown-menu(aria-labelledby='navbarDropdown')
             //- li
             //-   a.dropdown-item(href='newparking.html') Parking form
-            //- li
-            //-   a.dropdown-item(href='newcarclinic.html') Car Clinic form
+            
             li 
             
                a.dropdown-item(href='/api/register' target='_blank') User Signup
             
-             
+            li
+              a.dropdown-item(href='/api/emptable') Employee list
+              
+            li
+              a.dropdown-item(href='/api/pricesform') Parking Price form
+
+            li
+              a.dropdown-item(href='/api/ccpricesform') Clinic Price form 
+
             li
               a.dropdown-item(href='/api/logout') Logout
       form.d-flex
@@ -75,17 +82,17 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .col-sm-6
     .card
       .card-body
-        h1.card-title Park Price
-        p.counter #{parkCost}
+        h1.card-title Park Rev
+        p.counter #{totalsum}
         br
         //- .butt
         //-   a.btn(href="/api/dirparkprice") Table
   .col-sm-6
     .card.gy-5
       .card-body
-        h1.card-title Clinic Price
-        //- p.counter #{count2}
+        h1.card-title Clinic Rev
+        p.counter #{totalCsum}
         br
-        .butt
-          a.btn(href="/api/dirccpricetable") Table
+        //- .butt
+          //- a.btn(href="/api/dirccpricetable") Table
 script(src='/libs/bootstrap/js/bootstrap.bundle.js')

@@ -8,7 +8,7 @@ head
   link(rel='stylesheet' href='/css/newSignup.css')
 nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .container-fluid
-    a.navbar-brand(href='#') Dockville
+    a.navbar-brand(href='/api/directordash') Dockville
     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     
@@ -19,38 +19,37 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-dark.navbar-dark
   .col-sm-6
     .card.card1.gy-5
       .card-body
-        form#formId(name='reguser' action='/api/reguser' onsubmit='return Validate(event)' method='POST')
+        form#formId(name='regedituser' method='POST' action="/api/emp/edit?id="+emp._id)
           label.form-label(for='exampleInputEmail1')  Full name
-          input#userName.form-control(type='text' name='fullname')
+          input#userName.form-control(type='text' name='fullname' value= emp.fullname)
           span#fullnError
           label.form-label(for='exampleInputEmail1')  Username
-          input#userName.form-control(type='text' name='username')
+          input#userName.form-control(type='text' name='username' value= emp.username)
           span#userError
           label.form-label(for='exampleInputEmail1') Email 
-          input#exampleInputEmail1.form-control(type='email' name='emailinput')
+          input#exampleInputEmail1.form-control(type='email' name='emailinput' value= emp.emailinput)
           span#emailError
           .row
               .col
                 label.form-label(for='role') Role 
                 select#inlineFormSelectPref.form-select(name= 'role' )
                     option(value='') Select Role
-                    option(value='Director') Director 
-                    option(value='Manager') Manager
-                    option(value='Agent') Agent
+                    option(value='Director' selected=emp.role==='Director') Director 
+                    option(value='Manager' selected=emp.role==='Manager') Manager
+                    option(value='Agent' selected=emp.role==='Agent') Agent
                     span#roleError
               .col
                 label.form-label(for='branch') Branch 
                 select#inlineFormSelectPref.form-select(name= 'branch')
                     option(value='') Select branch
-                    option(value='Kampala Rd') Kampala Rd 
-                    option(value='Nakawa') Nakawa
+                    option(value='Kampala Rd' selected=emp.branch==='Kampala Rd') Kampala Rd 
+                    option(value='Nakawa' selected=emp.branch==='Nakawa') Nakawa
                     span#branchError
           label.form-label(for='password') Password
-          input#email.form-control(type='password' name='password')
+          input#email.form-control(type='password' name='password' value= emp.password)
           br
           .butt
             button.btn(type='submit') Submit
-    // <div class="butt">
-    // </div>
+    
 script(src='/js/regValidation2.js')
 script(src='/libs/bootstrap/js/bootstrap.bundle.js')
